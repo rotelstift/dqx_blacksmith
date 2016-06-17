@@ -1,4 +1,12 @@
 window.onload = function () {
+	$("form").on("keypress", function (e) {
+    if (e.which === 13) {
+			refreshChartA();
+			refreshChartB();
+			refreshChartC();
+      return false;
+    }
+	});
 	var damageRange = damageCal(1000);
 	$(function() {
     $( "#slider" ).slider({
