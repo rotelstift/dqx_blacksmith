@@ -1,0 +1,10 @@
+body{
+  width: 1200px;
+}
+div.blockArea{
+  width: 290px;
+  float: left;
+  border-width: 1px;
+  border-style: dashed;
+  padding: 3px;
+}
