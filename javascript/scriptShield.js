@@ -1,6 +1,24 @@
 window.onload = function () {
-	var damageRange = damageCal(1700); // 仮に2000度。本番では1000度に直す。
-	alert(damageRange[1][0]);
+	var damageRange = damageCal(1000);
+	$(function() {
+    $( "#slider" ).slider({
+			min: 50,
+			max: 2000,
+			step: 50,
+			value: 1000,
+			change: function(e, ui) {
+	      $('#temperature').val(ui.value);
+				refreshChartA();
+				refreshChartB();
+				refreshChartC();
+				refreshChartD();
+	    },
+			create: function(e, ui) {
+	      $('#temperature').val($(this).slider('option', 'value'));
+	    }
+		});
+  });
+	//alert(damageRange[1][0]);
 	var chartA = new CanvasJS.Chart("chartContainerA",
 	{
 		// title:{
@@ -10,18 +28,19 @@ window.onload = function () {
 			includeZero:true,
 			title: "ダメージ値",
 			interval: 30,
+			viewportMaximum: itemData[1][1] + 30,
 			stripLines: [
-				{
+				{ //チャレンジゾーン
 					startValue: itemData[1][0] - damageRange[3][1],
 					endValue: itemData[1][1] - damageRange[3][0],
 				  opacity: .4
 				},
-				{
+				{ //絶対大丈夫だよゾーン
 					startValue: itemData[1][0] - damageRange[3][0],
 					endValue: itemData[1][1] - damageRange[3][1],
 				  opacity: .8
 				},
-				{
+				{ //成功ゾーン
 					startValue: itemData[1][0],
 					endValue: itemData[1][1],
 	        opacity: .2,
@@ -37,7 +56,7 @@ window.onload = function () {
 				type: "rangeBar",
 				//showInLegend: true,
 				yValueFormatString: "#0.##",
-				indexLabel: "{y[#index]}",
+				//indexLabel: "{y[#index]}",
 				dataPoints: [   // Y: [Low, High]
 					{x: 0, y:itemData[1], label: "成功ゾーン"},
 					{x: 0, y:[0, 0], label: "ダメージ総量"},
@@ -62,6 +81,7 @@ window.onload = function () {
 			includeZero:true,
 			title: "ダメージ値",
 			interval: 30,
+			viewportMaximum: itemData[2][1] + 30,
 			stripLines: [
 				{
 					startValue: itemData[2][0] - damageRange[3][1],
@@ -89,7 +109,7 @@ window.onload = function () {
 				type: "rangeBar",
 				//showInLegend: true,
 				yValueFormatString: "#0.##",
-				indexLabel: "{y[#index]}",
+				//indexLabel: "{y[#index]}",
 				dataPoints: [   // Y: [Low, High]
 					{x: 0, y:itemData[2], label: "成功ゾーン"},
 					{x: 0, y:[0, 0], label: "ダメージ総量"},
@@ -114,6 +134,7 @@ window.onload = function () {
 			includeZero:true,
 			title: "ダメージ値",
 			interval: 30,
+			viewportMaximum: itemData[3][1] + 30,
 			stripLines: [
 				{
 					startValue: itemData[3][0] - damageRange[3][1],
@@ -141,7 +162,7 @@ window.onload = function () {
 				type: "rangeBar",
 				//showInLegend: true,
 				yValueFormatString: "#0.##",
-				indexLabel: "{y[#index]}",
+				//indexLabel: "{y[#index]}",
 				dataPoints: [   // Y: [Low, High]
 					{x: 0, y:itemData[3], label: "成功ゾーン"},
 					{x: 0, y:[0, 0], label: "ダメージ総量"},
@@ -166,6 +187,7 @@ window.onload = function () {
 			includeZero:true,
 			title: "ダメージ値",
 			interval: 30,
+			viewportMaximum: itemData[4][1] + 30,
 			stripLines: [
 				{
 					startValue: itemData[4][0] - damageRange[3][1],
@@ -193,7 +215,7 @@ window.onload = function () {
 				type: "rangeBar",
 				//showInLegend: true,
 				yValueFormatString: "#0.##",
-				indexLabel: "{y[#index]}",
+				//indexLabel: "{y[#index]}",
 				dataPoints: [   // Y: [Low, High]
 					{x: 0, y:itemData[4], label: "成功ゾーン"},
 					{x: 0, y:[0, 0], label: "ダメージ総量"},
@@ -225,10 +247,15 @@ window.onload = function () {
 		var temp = parseInt($("#temperature").val());
 		damageRange = damageCal(temp);
 		//alert(damageRange);
+
 		chartA.options.data[0].dataPoints[1].y[1] = damage;
 		for(var i = 2; i <= 8; i++){
 			chartA.options.data[0].dataPoints[i].y = [damageRange[i - 1][0] + damage, damageRange[i - 1][1] + damage];
 		}
+		chartA.options.axisY.stripLines[0].startValue = itemData[1][0] - damageRange[3][1];
+		chartA.options.axisY.stripLines[0].endValue = itemData[1][1] - damageRange[3][0];
+		chartA.options.axisY.stripLines[1].startValue = itemData[1][0] - damageRange[3][0];
+		chartA.options.axisY.stripLines[1].endValue = itemData[1][1] - damageRange[3][1];
 		chartA.render();
 	}
 	function refreshChartB(){
@@ -244,6 +271,10 @@ window.onload = function () {
 		for(var i = 2; i <= 8; i++){
 			chartB.options.data[0].dataPoints[i].y = [damageRange[i - 1][0] + damage, damageRange[i - 1][1] + damage];
 		}
+		chartB.options.axisY.stripLines[0].startValue = itemData[2][0] - damageRange[3][1];
+		chartB.options.axisY.stripLines[0].endValue = itemData[2][1] - damageRange[3][0];
+		chartB.options.axisY.stripLines[1].startValue = itemData[2][0] - damageRange[3][0];
+		chartB.options.axisY.stripLines[1].endValue = itemData[2][1] - damageRange[3][1];
 		chartB.render();
 	}
 	function refreshChartC(){
@@ -259,6 +290,10 @@ window.onload = function () {
 		for(var i = 2; i <= 8; i++){
 			chartC.options.data[0].dataPoints[i].y = [damageRange[i - 1][0] + damage, damageRange[i - 1][1] + damage];
 		}
+		chartC.options.axisY.stripLines[0].startValue = itemData[3][0] - damageRange[3][1];
+		chartC.options.axisY.stripLines[0].endValue = itemData[3][1] - damageRange[3][0];
+		chartC.options.axisY.stripLines[1].startValue = itemData[3][0] - damageRange[3][0];
+		chartC.options.axisY.stripLines[1].endValue = itemData[3][1] - damageRange[3][1];
 		chartC.render();
 	}
 	function refreshChartD(){
@@ -274,8 +309,25 @@ window.onload = function () {
 		for(var i = 2; i <= 8; i++){
 			chartD.options.data[0].dataPoints[i].y = [damageRange[i - 1][0] + damage, damageRange[i - 1][1] + damage];
 		}
+		chartD.options.axisY.stripLines[0].startValue = itemData[4][0] - damageRange[3][1];
+		chartD.options.axisY.stripLines[0].endValue = itemData[4][1] - damageRange[3][0];
+		chartD.options.axisY.stripLines[1].startValue = itemData[4][0] - damageRange[3][0];
+		chartD.options.axisY.stripLines[1].endValue = itemData[4][1] - damageRange[3][1];
 		chartD.render();
 	}
+
+	$("#damageA").change(function(){
+		refreshChartA();
+	});
+	$("#damageB").change(function(){
+		refreshChartB();
+	});
+	$("#damageC").change(function(){
+		refreshChartC();
+	});
+	$("#damageD").change(function(){
+		refreshChartD();
+	});
 
 	$("#refresh").click(function () {
 
@@ -285,5 +337,7 @@ window.onload = function () {
 	refreshChartD();
 
 	});
+
+
 
 }

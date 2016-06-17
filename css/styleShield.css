@@ -29,6 +29,25 @@ label{
   margin-left: 15px;
 }
 
+div#sliderParts{
+  width: 1200px;
+  height: 60px;
+  padding: 4px;
+}
+
+form#sliderForm{
+  /*width: 200px;*/
+  float: left;
+  position: static;
+  display: block;
+}
+
+div#slider{
+  margin-left: 150px;
+  margin-top: 15px;
+
+}
+
 div.chartContainer{
   width: 450px;
   height: 300px;
