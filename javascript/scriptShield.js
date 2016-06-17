@@ -6,7 +6,7 @@ window.onload = function () {
 			max: 2000,
 			step: 50,
 			value: 1000,
-			change: function(e, ui) {
+			slide: function(e, ui) {
 	      $('#temperature').val(ui.value);
 				refreshChartA();
 				refreshChartB();
@@ -329,14 +329,7 @@ window.onload = function () {
 		refreshChartD();
 	});
 
-	$("#refresh").click(function () {
 
-	refreshChartA();
-	refreshChartB();
-	refreshChartC();
-	refreshChartD();
-
-	});
 
 
 
