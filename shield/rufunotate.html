@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>DQX鍛冶職人ダメージチェッカー</title>
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+	<script type="text/javascript" src="../javascript/canvasjs.min.js"></script>
+
+	<script type="text/javascript">
+		var itemData = [
+			["ルフの盾"],
+			[90, 98],
+			[140, 151],
+			[140, 151],
+			[90, 98]
+		];
+	</script>
+
+	<script type="text/javascript" src="../javascript/damageRange.js"></script>
+	<script type="text/javascript" src="../javascript/scriptShield.js"></script>
+	<link rel="stylesheet" href="../css/styleShield.css" type="text/css" />
+</head>
+<body>
+	<header>
+		<h1><a href="../index.html">DQX鍛冶職人ダメージチェッカー</a></h1>
+		<h2>ふうまの盾</h2>
+	</header>
+	<div id="sliderParts">
+		<form id="sliderForm">
+			<label>温度</label><input id="temperature" type="text" size="4" readonly />
+		</form>
+	<div id="slider" style="width:300px;"></div>
+</div>
+	<div class="blockArea">
+		<div class="formContainer">
+			<form>
+				<label>ダメージ</label>
+				<input type="text" name="damageA" id="damageA" size="3" value="0">
+			</form>
+		</div>
+		<div id="chartContainerA" class="chartContainer"></div>
+	</div>
+	<div class="blockArea">
+		<div class="formContainer">
+			<form>
+				<label>ダメージ</label>
+				<input type="text" name="damageB" id="damageB" size="3" value="0">
+			</form>
+		</div>
+		<div id="chartContainerB" class="chartContainer"></div>
+	</div>
+	<div class="blockArea">
+		<div class="formContainer">
+			<form>
+				<label>ダメージ</label>
+				<input type="text" name="damageC" id="damageC" size="3" value="0">
+			</form>
+		</div>
+		<div id="chartContainerC" class="chartContainer"></div>
+	</div>
+	<div class="blockArea">
+		<div class="formContainer">
+			<form>
+				<label>ダメージ</label>
+				<input type="text" name="damageD" id="damageD" size="3" value="0">
+			</form>
+		</div>
+		<div id="chartContainerD" class="chartContainer"></div>
+	</div>
+
+</body>
+
+
+</html>
