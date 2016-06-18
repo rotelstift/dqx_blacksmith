@@ -11,28 +11,29 @@
 
 	<script type="text/javascript">
 		var itemData = [
-			["うろこのかぶと"],
-			[18, 36],[18, 36],
-			[32, 48],[32, 48]
+			["天宮騎士のよろい上"],
+			[141, 149],[141, 149],
+			[166, 177],[166, 177],
+			[122, 128],[122, 128],
 		];
 	</script>
 
 	<script type="text/javascript" src="../javascript/damageRange.js"></script>
-	<script type="text/javascript" src="../javascript/scriptMet.js"></script>
-	<link rel="stylesheet" href="../css/styleMet.css" type="text/css" />
+	<script type="text/javascript" src="../javascript/scriptTops.js"></script>
+	<link rel="stylesheet" href="../css/styleTops.css" type="text/css" />
 </head>
 <body>
 	<header>
 		<h1><a href="../index.html">DQX鍛冶職人ダメージチェッカー</a></h1>
-		<h2>うろこのかぶと</h2>
+		<h2>天宮騎士のよろい上</h2>
 		<p style="width: 10em; float: right"><a href="../help.html">使い方</a></p>
 	</header>
 	<div id="sliderParts">
 		<form id="sliderForm">
 			<label>温度</label><input id="temperature" type="text" size="4" readonly />
 		</form>
-	<div id="slider" style="width:300px;"></div>
-</div>
+		<div id="slider" style="width:300px;"></div>
+	</div>
 	<div class="blockArea">
 		<div class="formContainer">
 			<form>
@@ -68,6 +69,24 @@
 			</form>
 		</div>
 		<div id="chartContainerD" class="chartContainer"></div>
+	</div>
+	<div class="blockArea">
+		<div class="formContainer">
+			<form>
+				<label>ダメージ</label>
+				<input type="text" name="damageE" id="damageE" size="3" value="0">
+			</form>
+		</div>
+		<div id="chartContainerE" class="chartContainer"></div>
+	</div>
+	<div class="blockArea">
+		<div class="formContainer">
+			<form>
+				<label>ダメージ</label>
+				<input type="text" name="damageF" id="damageF" size="3" value="0">
+			</form>
+		</div>
+		<div id="chartContainerF" class="chartContainer"></div>
 	</div>
 
 </body>
