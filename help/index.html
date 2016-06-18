@@ -1,0 +1,119 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>DQX鍛冶職人ダメージチェッカー</title>
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+	 <script type="text/javascript" src="../javascripts/canvasjs.min.js"></script>
+   <script type="text/javascript" src="../javascripts/damageRange.js"></script>
+   <script type="text/javascript" src="../javascripts/chartFunctions.js"></script>
+	 <script type="text/javascript" src="../javascripts/scriptHelp.js"></script>
+    <link rel="stylesheet" href="../stylesheets/style.css">
+    <script type="text/javascript">
+      var itemData = [ ["例"], [70, 82] ];
+  	</script>
+  <style>
+      div.blockArea{
+        width: 590px;
+        /*float: left;*/
+        height: 150px;
+        border-width: 1px;
+        border-style: dashed;
+      }
+  </style>
+</head>
+
+  <body>
+    <header>
+		<h1><a href="../index.html">DQX鍛冶職人ダメージチェッカー</a></h1>
+		<p id="helpLink"><a href="../help/index.html">使い方</a></p>
+      <h2>例</h2>
+
+	</header>
+
+    <div id="sliderParts">
+	<form id="sliderForm">
+		<label>温度</label><input id="temperature" type="text" size="4" readonly />
+	</form>
+	<div id="slider" style="width:300px;"></div>
+</div>
+
+<div class="blockArea">
+  <div class="formContainer">
+    <form>
+      <label>ダメージ</label>
+      <input type="text" name="damageA" id="damageA" size="3" value="0">
+    </form>
+  </div>
+  <div id="chartContainerA" class="chartContainer"></div>
+</div>
+
+<div>
+  <p>
+    ゲーム中の『くわしくみる』で出てきた数字を、ダメージ欄に入力してください。
+    今回は試しに60と入力してみましょう。
+    そうすると、そのダメージが赤いゲージになって伸びます。
+    そして、上と下のゲージが連動して移動します。
+  </p>
+  <p>
+    上と下にある各ゲージの意味は、今のダメージ量と温度から、次にどんな打ち方をしたらどの辺りまでダメージゲージが
+    伸びるかを表しています。
+    真ん中の緑色のゲージは、成功ゾーンを指します。
+    詳しくは、各ゲージにマウスを乗せてみてください。説明が現れます。
+  </p>
+  <p>
+    背景のオレンジ色は、どのあたりにダメージゲージを持ってきたらいいのかの目安を表しています。
+    一番薄いオレンジ色が、成功ゾーンを指します。
+    次に薄いオレンジ色は、ダメージゲージがこのゾーンにあるときに『叩く、狙い打ち』をしたら
+    成功ゾーンに入る可能性のあるゾーンを指します。
+    一番濃いオレンジ色は、ダメージゲージがこのゾーンにあるときに『叩く、狙い打ち』をしたら
+    成功ゾーンに絶対に入る安全圏ゾーンを指します。温度もしくは装備によってはこのゾーンは存在しないことがあります。
+  </p>
+  <p>
+    ページの一番上にある温度は、隣のスライドバーによって調節できます。
+    スライドバーを右に動かすと温度が上がり、左に動かすと温度が下がります。
+    それに連動して、グラフのダメージに関係するゾーンが変化します。
+    下は50度、上は2000度まで動かせます。
+    ゲーム中で2000度以上にした場合は2000度に合わせてください。2000度以上のダメージは一定です。
+  </p>
+  <p>
+    現在、ダメージが60で、温度が1000度だとします。そこから、各ゲージを見てみましょう。
+  </p>
+  <p>
+    まず、『3倍打ち』『2倍打ち、超4連打ち』『熱風おろし』を見てみると、完全に成功ゾーンよりも
+    奥に伸びていて、これで打つと成功ゾーンからはみ出してしまうことがわかります。
+  </p>
+  <p>
+    次に、紫色の『手加減打ち』ですが、これだと成功ゾーンに届かないことがわかります。
+  </p>
+  <p>
+    そして、成功ゾーンに収まる打ち方は、『叩く、狙い打ち』『乱れ打ち』『上下打ち、4連打ち、ななめ打ち』
+    であることが見て取れます。
+  </p>
+  <p>
+    特に現在の赤いダメージゲージは、一番濃いオレンジ色のゾーンにあることが見て取れます。
+    ここから叩く、狙い打ちをすると、絶対に成功ゾーンに収まるという意味です。
+  </p>
+  <p>
+    これらのゲージを目安にして、ダメージゲージをなるべく一番濃いオレンジ色に寄せて、
+    そこから叩く、狙い打ちをして成功ゾーンにダメージゲージを収めるようにしていきましょう。
+  </p>
+  <p>
+    最後に、同じアイテムを連続して作る時、リセットするためにはブラウザのリロードボタンを押してください。
+  </p>
+  <p>
+    ちなみにこのツールはあくまでどのくらいの力で叩いたらいいかを考える目安であり、
+    大成功を保証するものではありません。ご了承ください。
+  </p>
+
+</div>
+
+    <footer>
+  <p>何かご質問などありましたら、<a href="https://twitter.com/5678_dqx">@5678_dqx</a>までお願いします。</p>
+</footer>
+
+  </body>
+</html>

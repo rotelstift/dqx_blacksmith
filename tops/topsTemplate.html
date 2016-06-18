@@ -10,10 +10,10 @@
 	 <script type="text/javascript" src="../javascripts/canvasjs.min.js"></script>
    <script type="text/javascript" src="../javascripts/damageRange.js"></script>
    <script type="text/javascript" src="../javascripts/chartFunctions.js"></script>
-	 <script type="text/javascript" src="../javascripts/scriptFoot.js"></script>
+	 <script type="text/javascript" src="../javascripts/scriptTops.js"></script>
     <link rel="stylesheet" href="../stylesheets/style.css">
     <script type="text/javascript">
-      var itemData = [ ["天宮騎士のグリーブ"], [190, 201], [220, 230], [190, 201],[258, 264], ];
+      var itemData = [ ["名前"], [0, 0],[0, 0], [0, 0],[0, 0], [0, 0],[0, 0], ];
   	</script>
   <style>
     div.blockArea{
@@ -30,7 +30,7 @@
     <header>
 		<h1><a href="../index.html">DQX鍛冶職人ダメージチェッカー</a></h1>
 		<p id="helpLink"><a href="../help/index.html">使い方</a></p>
-      <h2>天宮騎士のグリーブ</h2>
+      <h2>名前</h2>
 
 	</header>
 
@@ -43,30 +43,12 @@
 
 <div class="blockArea">
   <div class="formContainer">
-    <!-- <form>
-      <label>ダメージ</label>
-      <input type="text" name="damageA" id="damageA" size="3" value="0">
-    </form> -->
-  </div>
-  <div class="chartContainer"></div>
-</div>
-<div class="blockArea">
-  <div class="formContainer">
     <form>
       <label>ダメージ</label>
       <input type="text" name="damageA" id="damageA" size="3" value="0">
     </form>
   </div>
   <div id="chartContainerA" class="chartContainer"></div>
-</div>
-<div class="blockArea">
-  <div class="formContainer">
-    <!-- <form>
-      <label>ダメージ</label>
-      <input type="text" name="damageA" id="damageA" size="3" value="0">
-    </form> -->
-  </div>
-  <div class="chartContainer"></div>
 </div>
 <div class="blockArea">
   <div class="formContainer">
@@ -94,6 +76,24 @@
     </form>
   </div>
   <div id="chartContainerD" class="chartContainer"></div>
+</div>
+<div class="blockArea">
+  <div class="formContainer">
+    <form>
+      <label>ダメージ</label>
+      <input type="text" name="damageE" id="damageE" size="3" value="0">
+    </form>
+  </div>
+  <div id="chartContainerE" class="chartContainer"></div>
+</div>
+<div class="blockArea">
+  <div class="formContainer">
+    <form>
+      <label>ダメージ</label>
+      <input type="text" name="damageF" id="damageF" size="3" value="0">
+    </form>
+  </div>
+  <div id="chartContainerF" class="chartContainer"></div>
 </div>
 
 

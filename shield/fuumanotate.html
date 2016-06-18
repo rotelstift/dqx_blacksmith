@@ -7,73 +7,81 @@
 	<link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
   <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-	<script type="text/javascript" src="../javascript/canvasjs.min.js"></script>
-
-	<script type="text/javascript">
-		var itemData = [
-			["ふうまの盾"],
-			[70, 82],
-			[110, 118],
-			[110, 118],
-			[70, 82]
-		];
-	</script>
-
-	<script type="text/javascript" src="../javascript/damageRange.js"></script>
-	<script type="text/javascript" src="../javascript/chartFunctions.js"></script>
-	<script type="text/javascript" src="../javascript/scriptShield.js"></script>
-	<link rel="stylesheet" href="../css/styleShield.css" type="text/css" />
+	 <script type="text/javascript" src="../javascripts/canvasjs.min.js"></script>
+   <script type="text/javascript" src="../javascripts/damageRange.js"></script>
+   <script type="text/javascript" src="../javascripts/chartFunctions.js"></script>
+	 <script type="text/javascript" src="../javascripts/scriptShield.js"></script>
+    <link rel="stylesheet" href="../stylesheets/style.css">
+    <script type="text/javascript">
+      var itemData = [ ["ふうまの盾"], [70, 82],[110, 118], [110, 118],[70, 82] ];
+  	</script>
+  <style>
+    div.blockArea{
+      width: 590px;
+      float: left;
+      height: 150px;
+      border-width: 1px;
+      border-style: dashed;
+    }
+  </style>
 </head>
-<body>
-	<header>
+
+  <body>
+    <header>
 		<h1><a href="../index.html">DQX鍛冶職人ダメージチェッカー</a></h1>
-		<h2>ふうまの盾</h2>
-		<p style="width: 10em; float: right"><a href="../help.html">使い方</a></p>
+		<p id="helpLink"><a href="../help/index.html">使い方</a></p>
+      <h2>ふうまの盾</h2>
+
 	</header>
-	<div id="sliderParts">
-		<form id="sliderForm">
-			<label>温度</label><input id="temperature" type="text" size="4" readonly />
-		</form>
+
+    <div id="sliderParts">
+	<form id="sliderForm">
+		<label>温度</label><input id="temperature" type="text" size="4" readonly />
+	</form>
 	<div id="slider" style="width:300px;"></div>
 </div>
-	<div class="blockArea">
-		<div class="formContainer">
-			<form>
-				<label>ダメージ</label>
-				<input type="text" name="damageA" id="damageA" size="3" value="0">
-			</form>
-		</div>
-		<div id="chartContainerA" class="chartContainer"></div>
-	</div>
-	<div class="blockArea">
-		<div class="formContainer">
-			<form>
-				<label>ダメージ</label>
-				<input type="text" name="damageB" id="damageB" size="3" value="0">
-			</form>
-		</div>
-		<div id="chartContainerB" class="chartContainer"></div>
-	</div>
-	<div class="blockArea">
-		<div class="formContainer">
-			<form>
-				<label>ダメージ</label>
-				<input type="text" name="damageC" id="damageC" size="3" value="0">
-			</form>
-		</div>
-		<div id="chartContainerC" class="chartContainer"></div>
-	</div>
-	<div class="blockArea">
-		<div class="formContainer">
-			<form>
-				<label>ダメージ</label>
-				<input type="text" name="damageD" id="damageD" size="3" value="0">
-			</form>
-		</div>
-		<div id="chartContainerD" class="chartContainer"></div>
-	</div>
 
-</body>
+<div class="blockArea">
+  <div class="formContainer">
+    <form>
+      <label>ダメージ</label>
+      <input type="text" name="damageA" id="damageA" size="3" value="0">
+    </form>
+  </div>
+  <div id="chartContainerA" class="chartContainer"></div>
+</div>
+<div class="blockArea">
+  <div class="formContainer">
+    <form>
+      <label>ダメージ</label>
+      <input type="text" name="damageB" id="damageB" size="3" value="0">
+    </form>
+  </div>
+  <div id="chartContainerB" class="chartContainer"></div>
+</div>
+<div class="blockArea">
+  <div class="formContainer">
+    <form>
+      <label>ダメージ</label>
+      <input type="text" name="damageC" id="damageC" size="3" value="0">
+    </form>
+  </div>
+  <div id="chartContainerC" class="chartContainer"></div>
+</div>
+<div class="blockArea">
+  <div class="formContainer">
+    <form>
+      <label>ダメージ</label>
+      <input type="text" name="damageD" id="damageD" size="3" value="0">
+    </form>
+  </div>
+  <div id="chartContainerD" class="chartContainer"></div>
+</div>
 
 
+    <footer>
+  <p>何かご質問などありましたら、<a href="https://twitter.com/5678_dqx">@5678_dqx</a>までお願いします。</p>
+</footer>
+
+  </body>
 </html>
