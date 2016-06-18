@@ -8,3 +8,6 @@ div.blockArea{
   border-style: dashed;
   padding: 3px;
 }
+footer{
+  clear: left;
+}
