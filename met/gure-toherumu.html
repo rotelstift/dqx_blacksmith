@@ -10,10 +10,10 @@
 	 <script type="text/javascript" src="../javascripts/canvasjs.min.js"></script>
    <script type="text/javascript" src="../javascripts/damageRange.js"></script>
    <script type="text/javascript" src="../javascripts/chartFunctions.js"></script>
-	 <script type="text/javascript" src="../javascripts/scriptArm.js"></script>
+	 <script type="text/javascript" src="../javascripts/scriptMet.js"></script>
     <link rel="stylesheet" href="../stylesheets/style.css">
     <script type="text/javascript">
-      var itemData = [ ["クロッシュグローブ"], [308, 318], [250, 256], [222, 233] ];
+      var itemData = [ ["グレートヘルム"], [150, 162],[200, 206], [200, 206],[150, 162] ];
   	</script>
 	<script>
 	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -26,13 +26,13 @@
 
 	</script>
   <style>
-      div.blockArea{
-        width: 590px;
-        /*float: left;*/
-        height: 150px;
-        border-width: 1px;
-        border-style: dashed;
-      }
+    div.blockArea{
+      width: 590px;
+      float: left;
+      height: 150px;
+      border-width: 1px;
+      border-style: dashed;
+    }
   </style>
 </head>
 
@@ -40,7 +40,7 @@
     <header>
 		<h1><a href="../">DQX鍛冶職人ダメージチェッカー</a></h1>
 		<p id="helpLink"><a href="../help/">使い方</a></p>
-      <h2>クロッシュグローブ</h2>
+      <h2>グレートヘルム</h2>
 
 	</header>
 
@@ -77,6 +77,15 @@
     </form>
   </div>
   <div id="chartContainerC" class="chartContainer"></div>
+</div>
+<div class="blockArea">
+  <div class="formContainer">
+    <form>
+      <label>ダメージ</label>
+      <input type="text" name="damageD" id="damageD" size="3" value="0">
+    </form>
+  </div>
+  <div id="chartContainerD" class="chartContainer"></div>
 </div>
 
 
