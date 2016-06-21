@@ -73,6 +73,15 @@ div.levelContainer{
   margin-left: 50px;
 }
 
+div.helpContainer{
+  clear: left;
+  padding: 30px;
+}
+
+div.helpContainer p{
+  margin-left: 50px;
+}
+
 h2{
   clear: left;
 }

@@ -13,7 +13,7 @@
 	 <script type="text/javascript" src="../javascripts/scriptHelp.js"></script>
     <link rel="stylesheet" href="../stylesheets/style.css">
     <script type="text/javascript">
-      var itemData = [ ["例"], [70, 82] ];
+      var itemData = [ ["例：ふうまの盾"], [70, 82],[110, 118], [110, 118],[70, 82] ];
   	</script>
 	<script>
 	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -26,13 +26,13 @@
 
 	</script>
   <style>
-      div.blockArea{
-        width: 590px;
-        /*float: left;*/
-        height: 150px;
-        border-width: 1px;
-        border-style: dashed;
-      }
+    div.blockArea{
+      width: 590px;
+      float: left;
+      height: 150px;
+      border-width: 1px;
+      border-style: dashed;
+    }
   </style>
 </head>
 
@@ -40,11 +40,11 @@
     <header>
 		<h1><a href="../">DQX鍛冶職人ダメージチェッカー</a></h1>
 		<p id="helpLink"><a href="../help/">使い方</a>　<a href="../changed.html">更新履歴</a></p>
-      <h2>例</h2>
+      <h2>例：ふうまの盾</h2>
 
 	</header>
 
-    <div id="sliderParts">
+  	<div id="sliderParts">
 	<form id="sliderForm">
 		<label>温度</label><input id="temperature" type="text" size="4" readonly />
 	</form>
@@ -60,13 +60,75 @@
   </div>
   <div id="chartContainerA" class="chartContainer"></div>
 </div>
+<div class="blockArea">
+  <div class="formContainer">
+    <form>
+      <label>ダメージ</label>
+      <input type="text" name="damageB" id="damageB" size="3" value="0">
+    </form>
+  </div>
+  <div id="chartContainerB" class="chartContainer"></div>
+</div>
+<div class="blockArea">
+  <div class="formContainer">
+    <form>
+      <label>ダメージ</label>
+      <input type="text" name="damageC" id="damageC" size="3" value="0">
+    </form>
+  </div>
+  <div id="chartContainerC" class="chartContainer"></div>
+</div>
+<div class="blockArea">
+  <div class="formContainer">
+    <form>
+      <label>ダメージ</label>
+      <input type="text" name="damageD" id="damageD" size="3" value="0">
+    </form>
+  </div>
+  <div id="chartContainerD" class="chartContainer"></div>
+</div>
 
+
+<div class="helpContainer">
+  <h3>使い方</h3>
+  <p>ダメージ欄に、ゲーム中の「くわしくみる」で出てきたダメージ量を入力してください。</p>
+  <p>赤いゲージがダメージ量を表します。</p>
+  <p>Tabキー、またはShiftキー＋矢印キーでカーソルが移動します。</p>
+  <p>入力が終わったらエンターキーを押すと、自動で温度が50度下がります。</p>
+  <p>赤いゲージの右上、右下にあるゲージが、今の温度でどんな打ち方をしたらどのくらいダメージゲージが
+  伸びるかを表しています。詳しくは、それぞれのゲージにマウスカーソルを合わせてみてください。</p>
+  <p>緑色のゲージが、成功ゾーンを表しています。</p>
+  <p>また、オレンジ色のゾーンは、ダメージゲージがこのゾーンにある時に「叩く、狙い打ち」をすると
+    成功ゾーンに入る可能性があるゾーンを表しています。</p>
+  <p>特に、濃いオレンジ色のゾーンは、「叩く、狙い打ち」が必ず成功ゾーンに入る安全圏を表しています。
+  しかし、温度が高い時や成功ゾーンが狭い時などには存在しないことがあります。</p>
+  <p>「火力上げ」、「冷やしこみ」、「熱風おろし」を使って温度が変化した時は、上の方にあるスライダーを
+  操作して温度の調整をしてください。スライダーは50度から2000度まで変化します。</p>
+  <p>現在のところ、叩き変化には対応していません。ご了承下さい。</p>
+</div>
+
+<!--
+ <div>
+  <h3>キー操作</h3>
+  <dl>
+    <dt>shift + ↑</dt>
+    <dd>カーソルを上に移動</dd>
+    <dt>shift + ↓</dt>
+    <dd>カーソルを下に移動</dd>
+    <dt>shift + →</dt>
+    <dd>カーソルを右に移動</dd>
+    <dt>shift + ←</dt>
+    <dd>カーソルを左に移動</dd>
+    <dt>enter</dt>
+    <dd>温度を50度下げる</dd>
+  </dl>
+</div>
 <div>
   <p>
     ゲーム中の『くわしくみる』で出てきた数字を、ダメージ欄に入力してください。
-    今回は試しに60と入力してみましょう。
+    今回は試しに60と入力して、エンターキーを押してみましょう。
     そうすると、そのダメージが赤いゲージになって伸びます。
-    そして、上と下のゲージが連動して移動します。
+    そして、上と下のゲージが連動して移動し、温度が50度下がります。
   </p>
   <p>
     上と下にある各ゲージの意味は、今のダメージ量と温度から、次にどんな打ち方をしたらどの辺りまでダメージゲージが
@@ -90,7 +152,7 @@
     ゲーム中で2000度以上にした場合は2000度に合わせてください。2000度以上のダメージは一定です。
   </p>
   <p>
-    現在、ダメージが60で、温度が1000度だとします。そこから、各ゲージを見てみましょう。
+    現在、ダメージが60で、温度が950度だとします。そこから、各ゲージを見てみましょう。
   </p>
   <p>
     まず、『3倍打ち』『2倍打ち、超4連打ち』『熱風おろし』を見てみると、完全に成功ゾーンよりも
@@ -118,6 +180,7 @@
     ちなみにこのツールはあくまでどのくらいの力で叩いたらいいかを考える目安であり、
     大成功を保証するものではありません。ご了承ください。
   </p>
+-->
 
 </div>
 

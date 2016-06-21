@@ -26,6 +26,7 @@ function renderChart(chartName, chartContainerID, itemDataAry) {
           startValue: itemDataAry[0],
           endValue: itemDataAry[1],
           opacity: .2,
+          color: "green"
         }
     ],
     },
