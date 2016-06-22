@@ -39,7 +39,7 @@
   <body>
     <header>
 		<h1><a href="../">DQX鍛冶職人ダメージチェッカー</a></h1>
-		<p id="helpLink"><a href="../help/">使い方</a>　<a href="../changed.html">更新履歴</a></p>
+		<p id="helpLink"><a href="../">トップページ</a>　<a href="../help/">使い方</a>　<a href="../changed.html">更新履歴</a></p>
       <h2>例：ふうまの盾</h2>
 
 	</header>
@@ -49,6 +49,9 @@
 		<label>温度</label><input id="temperature" type="text" size="4" readonly />
 	</form>
 	<div id="slider" style="width:300px;"></div>
+	<form id="resetForm">
+		<input type="button" value="リセット" onclick="location.reload();" />
+	</form>
 </div>
 
 <div class="blockArea">
@@ -104,6 +107,7 @@
   しかし、温度が高い時や成功ゾーンが狭い時などには存在しないことがあります。</p>
   <p>「火力上げ」、「冷やしこみ」、「熱風おろし」を使って温度が変化した時は、上の方にあるスライダーを
   操作して温度の調整をしてください。スライダーは50度から2000度まで変化します。</p>
+  <p>フォームをリセットしたい時は、右上にあるリセットボタンを押してください。</p>
   <p>現在のところ、叩き変化には対応していません。ご了承下さい。</p>
 </div>
 

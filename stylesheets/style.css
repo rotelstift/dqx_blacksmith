@@ -13,7 +13,7 @@ div.formContainer{
   background: #EFEFEF;
 }
 
-form{
+.formContainer form{
   position: relative;
   top: 30%;
 }
@@ -40,6 +40,11 @@ form#sliderForm{
   display: block;
 }
 
+form#resetForm{
+  width: 100px;
+  float: right;
+}
+
 div#slider{
   margin-left: 150px;
   margin-top: 15px;
@@ -56,8 +61,9 @@ footer{
   clear: left;
 }
 #helpLink{
-  width: 10em;
+  width: 20em;
   float: right;
+  text-align: right;
 }
 
 div.setContainer{
