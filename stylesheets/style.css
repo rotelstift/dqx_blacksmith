@@ -18,10 +18,14 @@ div.formContainer{
   top: 30%;
 }
 
-.formContainer form input{
+input{
   margin-left: 7px;
   width: 80px;
   font-size: xx-large;
+}
+
+form#resetForm input{
+  font-size: medium;
 }
 
 label{
