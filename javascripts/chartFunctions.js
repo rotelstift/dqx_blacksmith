@@ -1,4 +1,4 @@
-var damageRange = damageCal(1000);
+var damageRange = damageCal(1000, this.bullion);
 
 function renderChart(chartName, chartContainerID, itemDataAry) {
   var chartName = new CanvasJS.Chart(chartContainerID,
@@ -78,7 +78,7 @@ function refreshChart(chartName, damageID, itemDataAry){
   //alert("hoge");
   //alert(damageCal(1950));
   var temp = parseInt($("#temperature").val());
-  damageRange = damageCal(temp);
+  damageRange = damageCal(temp, this.bullion);
   //alert(damageRange);
 
   chartName.options.data[0].dataPoints[1].y[1] = damage;
